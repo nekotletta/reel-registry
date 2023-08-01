@@ -12,7 +12,9 @@ lines_dict = {}
 for line in lines:
     date_str, users_str = line.strip().split(':')
     date = date_str.strip()
-    users = [user.strip() for user in eval(users_str.strip())]
+    users = []
+    for user in eval(users_str.strip()):
+        users.append(user.strip())
     lines_dict[date] = users
 
 #keep track of how many reels each user sends per day

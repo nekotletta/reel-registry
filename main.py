@@ -13,7 +13,7 @@ for line in lines:
     date_str, users_str = line.strip().split(':')
     date = date_str.strip()
     users = []
-    for user in eval(users_str.strip()):
+    for user in (users_str.strip()):
         users.append(user.strip())
     lines_dict[date] = users
 

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>ECharts</title>
+  <!-- Include the ECharts file you just downloaded -->
+  <script src="/static/echarts.js"></script>
+</head>
+
+<body>
+  <h1>Reels sent per user per day</h1>
+  <div id="results-graph" style="width: 600px; height: 400px;"></div>
+
+  <script type="text/javascript">
+    // Pass the freq dictionary to the JavaScript block
+    var freq = {{ freq|tojson|safe }};
+    
+    var dataset = [];
+    for (var date in freq) {
+      if (freq.hasOwnProperty(date)) {
+        var data = []; // List of users that sent reels on that day
+        for (var user in freq[date]) {
+          if (freq[date].hasOwnProperty(user)) {
+            data.push({
+              user: user,
+              count: freq[date][user]
+            });
+          }
+        }
+        dataset.push({
+          source: data,
+          dimensions: ['user', 'count'],
+          sourceHeader: false,
+          seriesLayoutBy: 'column',
+          name: date
+        });
+      }
+    }
+    
+    // Create a separate line chart for each date using the series component
+    var series = [];
+    for (var i = 0; i < dataset.length; i++) {
+      var date = dataset[i].name;
+      series.push({
+        type: 'line',
+        datasetIndex: i,
+        name: date,
+        symbolSize: 8
+      });
+    }
+
+    // Create the echarts chart
+    var chart = echarts.init(document.getElementById('results-graph'));
+    var option = {
+      legend: {
+        data: Object.keys(freq)
+      },
+      xAxis: {
+        type: 'category',
+        datasetIndex: 0,
+        axisLabel: {
+          rotate: 45,
+          interval: 0
+        }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Amount of reels sent',
+        nameLocation: 'middle',
+        nameGap: 30,
+      },
+      tooltip: {
+        trigger: 'axis',
+        formatter: function(params) {
+          // Format the tooltip to show the user and count
+          var data = params[0].data;
+          return data.user + ': ' + data.count;
+        }
+      },
+      dataset: dataset,
+      series: series
+    };
+    chart.setOption(option);
+    
+  </script>
+  
+</body>
+
+</html>

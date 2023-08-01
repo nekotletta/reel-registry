@@ -19,8 +19,10 @@ IMPORTANT NOTE: you need to REMOVE instagram notifications that are simply text 
 program counting reels. Theres nothing to account for these notifications.
 
 
-![image](https://github.com/nekotletta/reel-registry/assets/99048617/3d6260b1-8ca5-4a95-be75-3bb64f3a21de)
-![image](https://github.com/nekotletta/reel-registry/assets/99048617/9e7ccaae-8be4-45ba-8da5-c51680ff6f69)
+![image](https://github.com/nekotletta/reel-registry/assets/99048617/1cdf2067-e600-4b09-8acf-368678a2abd1)
+
+![image](https://github.com/nekotletta/reel-registry/assets/99048617/28e30557-5f48-45f9-a1cf-f62600b33b17)
+
 
 
 Create a word folder with a document in it to store all data from the first shortcut. In the folder, click on share and "copy link" 
@@ -34,12 +36,14 @@ IMPORTANT NOTE: you need to CLEAR THE INFO collected from the SCREENSHOT(S) AFTE
 correctly. Otherwise it'd be adding the same information over and over
 
 
-![image](https://github.com/nekotletta/reel-registry/assets/99048617/6f650af0-7e3b-4ca5-b4f1-a95f9be5d700)
+![image](https://github.com/nekotletta/reel-registry/assets/99048617/fc03161e-4278-4ff6-aad3-a437e5109d32)
+
 
 
 Optional: Make the secondary shortcut automatically run every day using automation on the Shortcuts app
 
 
-![image](https://github.com/nekotletta/reel-registry/assets/99048617/3c52ea2c-00e3-43ef-8600-347f0d3d369b)
+![image](https://github.com/nekotletta/reel-registry/assets/99048617/45036263-a7a9-4a89-8ff4-0fd9d55b42e4)
+
 
 

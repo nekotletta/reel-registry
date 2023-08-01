@@ -1,0 +1,53 @@
+<!-- Template used in the creation of the users page (total number of reels per user summed up) 
+The charts are made using a js library called ECharts. It is necessary to ghave the Echarts source file in your static folder for it to work.
+Echarts: https://echarts.apache.org/en/download.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>ECharts</title>
+  <!-- Include the ECharts file you just downloaded -->
+  <script src="/static/echarts.js"></script>
+</head>
+
+<body>
+  <h1>Reels sent per day</h1>
+  <div id="results-graph" style="width: 600px; height: 400px;"></div>
+
+  <script type="text/javascript">
+    var lines = {{ lines|tojson|safe }};
+    document.write(lines);
+    var user_counts = {};
+		for (var date in lines) {
+			if (lines.hasOwnProperty(date)) {
+				user_counts[date] = lines[date].length;
+			}
+		}
+
+		// Create the echarts chart
+		var chart = echarts.init(document.getElementById('results-graph'));
+		var option = {
+			title: {
+				text: 'Number of reels sent per day'
+			},
+			xAxis: {
+				type: 'category',
+				data: Object.keys(user_counts)
+			},
+			yAxis: {
+				type: 'value'
+			},
+			series: [{
+				data: Object.values(user_counts),
+				type: 'bar'
+			}]
+		};
+		chart.setOption(option);
+    
+	</script>
+  
+</body>
+
+</html>

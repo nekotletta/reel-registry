@@ -1,6 +1,7 @@
 # reel-registry
-A program that gathers data on how many reels you get sent per day with the help of a shortcut in iOS. 
+A program built in replit that gathers data on how many reels you get sent per day with the help of a shortcut in iOS. 
 Displays the total number of reels sent along with the number of reels sent by each user separately and displays it on a graph. 
+You need two notes in your notes app, and to create a new folder with a document in Word
 
 Number of total reels sent per day\n
 
